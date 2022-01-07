@@ -45,7 +45,6 @@ public class PricePredict extends AppCompatActivity{
         bhk = findViewById(R.id.bhk);
         predbtn = findViewById(R.id.predbtn);
         price = findViewById(R.id.price);
-        loc = findViewById(R.id.loc);
 
         // Creating Spinner
         Spinner spinner = findViewById(R.id.spin1);
