@@ -74,7 +74,7 @@
         android:layout_height="wrap_content"
         android:text="Price :- Rs. "
         android:textColor="@color/black"
-        android:textSize="35dp"
+        android:textSize="35sp"
         android:layout_below="@+id/predbtn"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"/>

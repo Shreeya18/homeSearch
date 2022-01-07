@@ -30,8 +30,9 @@ public class PricePredict extends AppCompatActivity{
 
     private EditText total_sqft, bath, bhk;
     private Button predbtn;
-    private TextView price;
+    private TextView price,loc;
     private String url = "https://bhaveshree.herokuapp.com/";
+    private String newItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,14 +45,25 @@ public class PricePredict extends AppCompatActivity{
         bhk = findViewById(R.id.bhk);
         predbtn = findViewById(R.id.predbtn);
         price = findViewById(R.id.price);
+        loc = findViewById(R.id.loc);
 
         // Creating Spinner
         Spinner spinner = findViewById(R.id.spin1);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.locations, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        String location = spinner.getSelectedItem().toString();
 
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                newItem = spinner.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         predbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +93,7 @@ public class PricePredict extends AppCompatActivity{
                     protected Map<String, String> getParams(){
                         Map<String, String> params = new HashMap<String, String>();
                         params.put("total_sqft", total_sqft.getText().toString());
-                        params.put("location", location);
+                        params.put("location", newItem);
                         params.put("bhk", bhk.getText().toString());
                         params.put("bath", bath.getText().toString());
                         return params;
