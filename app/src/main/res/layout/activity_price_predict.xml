@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PricePredict">
+
+
+    <TextView
+        android:id="@+id/cl"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:textColor="@color/black"
+        android:text="Choose Locations"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="58dp"/>
+
+    <Spinner
+        android:id="@+id/spin1"
+        android:layout_below="@+id/cl"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <EditText
+        android:id="@+id/sqft"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="Enter Sqft"
+        android:textColorHint="@color/black"
+        android:layout_marginTop="160dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <EditText
+        android:id="@+id/bath"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="Enter Number of Bathrooms"
+        android:textColorHint="@color/black"
+        android:layout_marginTop="230dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <EditText
+        android:id="@+id/bhk"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="BHK"
+        android:textColorHint="@color/black"
+        android:layout_marginTop="300dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <Button
+        android:id="@+id/predbtn"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:textColor="@color/white"
+        android:text="Predict Price"
+        android:textAllCaps="false"
+        android:background="@color/purple_700"
+        android:layout_marginTop="390dp"
+        android:layout_centerHorizontal="true"/>
+
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price :- Rs. "
+        android:textColor="@color/black"
+        android:textSize="35dp"
+        android:layout_below="@+id/predbtn"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"/>
+
+
+
+
+</RelativeLayout>

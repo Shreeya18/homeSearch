@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisActivity">
+
+    <EditText
+        android:id="@+id/reg_name"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter Name"
+        android:textColorHint="@color/black"
+        android:background="#f9f979"
+        />
+
+    <EditText
+        android:id="@+id/reg_email"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:layout_marginTop="160dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter Email Id"
+        android:textColorHint="@color/black"
+        android:background="#f9f979"
+        />
+
+    <EditText
+        android:id="@+id/reg_contact"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:layout_marginTop="240dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter Contact No."
+        android:textColorHint="@color/black"
+        android:background="#f9f979"
+        />
+    <EditText
+        android:id="@+id/reg_passwd"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:layout_marginTop="320dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter Password"
+        android:textColorHint="@color/black"
+        android:background="#f9f979"
+        />
+
+    <Button
+        android:id="@+id/signinBtn"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="Sign In"
+        android:background="#089300"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"/>
+
+
+
+
+</RelativeLayout>
