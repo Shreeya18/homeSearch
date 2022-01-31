@@ -29,9 +29,9 @@
 
     <EditText
         android:id="@+id/search_btn"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="120dp"
+        android:layout_width="320dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="80dp"
         android:layout_centerHorizontal="true"
         android:background="@color/purple_500"
         android:hint="Search"
@@ -73,6 +73,7 @@
         app:menu="@menu/nav_menu"
         android:id="@+id/nav_view"
         />
+
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

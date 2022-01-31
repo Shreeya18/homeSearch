@@ -9,13 +9,27 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Trace;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.util.ArrayList;
 
 public class HomeScreen extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -23,8 +37,18 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
     NavigationView nav_view;
     Toolbar tool_bar;
     ActionBarDrawerToggle toggle;
-
     private Button propAdd;
+
+
+    // Recycler View ************************************ Show Data ****************************'
+    private RecyclerView recyview;
+    HouseAdapter houseAdapter;
+    ArrayList<FirebaseModal> list;
+    private FirebaseDatabase storage = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = storage.getReference().child("Owners");
+    StorageReference db = FirebaseStorage.getInstance().getReference();
+    // ******************  Show Data ************************************************************
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +58,37 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         drawerLayout = findViewById(R.id.draw_lay);
         nav_view = findViewById(R.id.nav_view);
         tool_bar = findViewById(R.id.tool_bar);
-
         propAdd = findViewById(R.id.prop_add);
+
+        // **********************************************
+        recyview = findViewById(R.id.recyview);
+        recyview.setLayoutManager(new LinearLayoutManager(this));
+
+        list = new ArrayList<>();
+        houseAdapter = new HouseAdapter(this, list);
+        recyview.setAdapter(houseAdapter);
+
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+                    FirebaseModal firebaseModal = dataSnapshot.getValue(FirebaseModal.class);
+                    list.add(firebaseModal);
+                }
+                houseAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+                Log.d("DatabaseError", "The Error is: " + error);
+                Toast.makeText(HomeScreen.this, "Uncessful Fetch", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        // **********************************************
 
 
         propAdd.setOnClickListener(new View.OnClickListener() {
