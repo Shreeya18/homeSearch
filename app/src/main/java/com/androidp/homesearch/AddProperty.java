@@ -13,6 +13,8 @@ import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -30,8 +32,12 @@ public class AddProperty extends AppCompatActivity {
     private ImageView addImg;
     private EditText priceAdd, bhkAdd, locAdd, sqftAdd;
     private Uri imageuri;
+    private RadioGroup radiogrp;
+    private RadioButton radioButton;
+
+    // Created Firebase database connection
     private FirebaseDatabase storage = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = storage.getReference();
+    DatabaseReference myRef = storage.getReference().child("Owners");
     StorageReference db = FirebaseStorage.getInstance().getReference();
 
 
@@ -41,6 +47,7 @@ public class AddProperty extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_property);
 
+        // Initialized Variables for basic components
         savebtn = findViewById(R.id.savebtn);
         addImg = findViewById(R.id.addImg);
         uploadBtn = findViewById(R.id.uploadBtn);
@@ -48,10 +55,30 @@ public class AddProperty extends AppCompatActivity {
         bhkAdd = findViewById(R.id.bhkAdd);
         locAdd = findViewById(R.id.locAdd);
         sqftAdd = findViewById(R.id.sqftAdd);
+        radiogrp = findViewById(R.id.grpbtns);
 
+        // Clear the radioButton at first.
+        radiogrp.clearCheck();
+
+        // Check and retrieve selected Id (Button) from grp
+        radiogrp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                RadioButton radioButton = (RadioButton)radioGroup.findViewById(i);
+            }
+        });
         savebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Get Checked ID
+                int selectedId = radiogrp.getCheckedRadioButtonId();
+                if (selectedId == -1) {
+                    Toast.makeText(AddProperty.this, "No answer has been selected", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    // Add The text of the radio Button
+                    radioButton = (RadioButton)radiogrp.findViewById(selectedId);
+                }
                 if(imageuri != null){
                     upload(imageuri);
 
@@ -96,10 +123,15 @@ public class AddProperty extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         FirebaseModal fmodal = new FirebaseModal(uri.toString(), priceAdd.getText().toString(), bhkAdd.getText().toString(),
-                                sqftAdd.getText().toString(), locAdd.getText().toString());
+                                sqftAdd.getText().toString(), locAdd.getText().toString(), radioButton.getText().toString());
                         String  modelid = myRef.push().getKey();
                         myRef.child(modelid).setValue(fmodal);
                         Toast.makeText(AddProperty.this, "Hurrah!! Successful", Toast.LENGTH_SHORT).show();
+                        priceAdd.setText("");
+                        bhkAdd.setText("");
+                        sqftAdd.setText("");
+                        locAdd.setText("");
+                        radiogrp.clearCheck();
                     }
                 });
             }
