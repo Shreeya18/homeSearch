@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Trace;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.widget.Toolbar;
 
@@ -22,6 +24,8 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
     Toolbar tool_bar;
     ActionBarDrawerToggle toggle;
 
+    private Button propAdd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +34,17 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         drawerLayout = findViewById(R.id.draw_lay);
         nav_view = findViewById(R.id.nav_view);
         tool_bar = findViewById(R.id.tool_bar);
+
+        propAdd = findViewById(R.id.prop_add);
+
+
+        propAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeScreen.this, AddProperty.class);
+                startActivity(intent);
+            }
+        });
 
         nav_view.setNavigationItemSelectedListener(this);
         setSupportActionBar(tool_bar);
@@ -40,6 +55,8 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -56,6 +73,12 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
             Intent intent = new Intent(HomeScreen.this, PricePredict.class);
             startActivity(intent);
         }
+        if(id == R.id.login){
+            Intent intent = new Intent(HomeScreen.this,LoginActivity.class);
+            startActivity(intent);
+        }
         return false;
     }
+
+
 }

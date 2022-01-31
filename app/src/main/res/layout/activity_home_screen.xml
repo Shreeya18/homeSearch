@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context=".HomeScreen">
 
 <RelativeLayout
@@ -26,6 +28,7 @@
 
 
     <EditText
+        android:id="@+id/search_btn"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="120dp"
@@ -37,14 +40,27 @@
         android:textColor="@color/white"
         />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World"
-            android:textColor="@color/black"
-            android:textSize="40sp"
-            android:layout_marginTop="250dp"
-            android:layout_marginLeft="20dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyview"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_btn"
+        android:layout_marginTop="30dp"
+        android:padding="10dp"
+        tools:listitem="@layout/houses_recycler"
+        android:layout_marginBottom="80dp"
+        />
+
+    <Button
+        android:id="@+id/prop_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:textAllCaps="false"
+        android:background="#95af"
+        android:layout_below="@+id/recyview"
+        android:layout_marginTop="-66dp"
+        android:layout_centerHorizontal="true"/>
 
 
 </RelativeLayout>
@@ -57,4 +73,6 @@
         app:menu="@menu/nav_menu"
         android:id="@+id/nav_view"
         />
+
+
 </androidx.drawerlayout.widget.DrawerLayout>

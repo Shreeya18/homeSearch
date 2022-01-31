@@ -5,7 +5,7 @@
     <string name="navigation_close">Close Navigation Drawer</string>
 
     <string-array name="locations">
-       <item> "1st block jayanagar"</item>
+        <item> "1st block jayanagar"</item>
         <item>  "1st phase jp nagar"</item>
         <item> "2nd phase judicial layout"</item>
         <item> "2nd stage nagarbhavi"</item>
@@ -59,97 +59,97 @@
         <item> "bommasandra"</item>
         <item> "bommasandra industrial area"</item>
         <item> "bommenahalli"</item>
-     <item> "brookefield"</item>
-     <item> "budigere"</item>
-     <item> "cv raman nagar"</item>
-     <item> "chamrajpet"</item>
-     <item> "chandapura"</item>
-     <item> "channasandra"</item>
-     <item> "chikka tirupathi"</item>
-     <item> "chikkabanavar"</item>
-     <item> "chikkalasandra"</item>
-     <item> "choodasandra"</item>
-     <item> "cooke town"</item>
-     <item> "cox town"</item>
-     <item> "cunningham road"</item>
-     <item> "dasanapura"</item>
-     <item> "dasarahalli"</item>
-     <item> "devanahalli"</item>
-     <item> "devarachikkanahalli"</item>
-     <item> "dodda nekkundi"</item>
-     <item> "doddaballapur"</item>
-     <item> "doddakallasandra"</item>
-     <item> "doddathoguru"</item>
-     <item> "domlur"</item>
-     <item> "dommasandra"</item>
-     <item> "epip zone"</item>
-     <item> "electronic city"</item>
-     <item> "electronic city phase ii"</item>
-     <item> "electronics city phase 1"</item>
-     <item> "frazer town"</item>
-     <item> "gm palaya"</item>
-     <item> "garudachar palya"</item>
-     <item> "giri nagar"</item>
-     <item> "gollarapalya hosahalli"</item>
-     <item> "gottigere"</item>
-     <item> "green glen layout"</item>
-     <item> "gubbalala"</item>
-     <item> "gunjur"</item>
-     <item> "hal 2nd stage"</item>
-     <item> "hbr layout"</item>
-     <item> "hrbr layout"</item>
-     <item> "hsr layout"</item>
-     <item> "haralur road"</item>
-     <item> "harlur"</item>
-     <item> "hebbal"</item>
-     <item> "hebbal kempapura"</item>
-     <item> "hegde nagar"</item>
-     <item> "hennur"</item>
-     <item> "hennur road"</item>
-     <item> "hoodi"</item>
-     <item> "horamavu agara"</item>
-     <item> "horamavu banaswadi"</item>
-     <item> "hormavu"</item>
-     <item> "hosa road"</item>
-     <item> "hosakerehalli"</item>
-     <item> "hoskote"</item>
-     <item> "hosur road"</item>
-     <item> "hulimavu"</item>
-     <item> "isro layout"</item>
-     <item> "itpl"</item>
-     <item> "iblur village"</item>
-     <item> "indira nagar"</item>
-     <item> "jp nagar"</item>
-     <item> "jakkur"</item>
-     <item> "jalahalli"</item>
-     <item> "jalahalli east"</item>
-     <item> "jigani"</item>
-     <item> "judicial layout"</item>
-     <item> "kr puram"</item>
-     <item> "kadubeesanahalli"</item>
-     <item> "kadugodi"</item>
-     <item> "kaggadasapura"</item>
-     <item> "kaggalipura"</item>
-     <item> "kaikondrahalli"</item>
-     <item> "kalena agrahara"</item>
-     <item> "kalyan nagar"</item>
-     <item> "kambipura"</item>
-     <item> "kammanahalli"</item>
-     <item> "kammasandra"</item>
-     <item> "kanakapura"</item>
-     <item> "kanakpura road"</item>
-     <item> "kannamangala"</item>
-     <item> "karuna nagar"</item>
-     <item> "kasavanhalli"</item>
-     <item> "kasturi nagar"</item>
-     <item> "kathriguppe"</item>
-     <item> "kaval byrasandra"</item>
-     <item> "kenchenahalli"</item>
-     <item> "kengeri"</item>
-     <item> "kengeri satellite town"</item>
-     <item> "kereguddadahalli"</item>
-     <item> "kodichikkanahalli"</item>
-     <item> "kodigehaali"</item>
-     <item> "kodigehalli"</item>
+        <item> "brookefield"</item>
+        <item> "budigere"</item>
+        <item> "cv raman nagar"</item>
+        <item> "chamrajpet"</item>
+        <item> "chandapura"</item>
+        <item> "channasandra"</item>
+        <item> "chikka tirupathi"</item>
+        <item> "chikkabanavar"</item>
+        <item> "chikkalasandra"</item>
+        <item> "choodasandra"</item>
+        <item> "cooke town"</item>
+        <item> "cox town"</item>
+        <item> "cunningham road"</item>
+        <item> "dasanapura"</item>
+        <item> "dasarahalli"</item>
+        <item> "devanahalli"</item>
+        <item> "devarachikkanahalli"</item>
+        <item> "dodda nekkundi"</item>
+        <item> "doddaballapur"</item>
+        <item> "doddakallasandra"</item>
+        <item> "doddathoguru"</item>
+        <item> "domlur"</item>
+        <item> "dommasandra"</item>
+        <item> "epip zone"</item>
+        <item> "electronic city"</item>
+        <item> "electronic city phase ii"</item>
+        <item> "electronics city phase 1"</item>
+        <item> "frazer town"</item>
+        <item> "gm palaya"</item>
+        <item> "garudachar palya"</item>
+        <item> "giri nagar"</item>
+        <item> "gollarapalya hosahalli"</item>
+        <item> "gottigere"</item>
+        <item> "green glen layout"</item>
+        <item> "gubbalala"</item>
+        <item> "gunjur"</item>
+        <item> "hal 2nd stage"</item>
+        <item> "hbr layout"</item>
+        <item> "hrbr layout"</item>
+        <item> "hsr layout"</item>
+        <item> "haralur road"</item>
+        <item> "harlur"</item>
+        <item> "hebbal"</item>
+        <item> "hebbal kempapura"</item>
+        <item> "hegde nagar"</item>
+        <item> "hennur"</item>
+        <item> "hennur road"</item>
+        <item> "hoodi"</item>
+        <item> "horamavu agara"</item>
+        <item> "horamavu banaswadi"</item>
+        <item> "hormavu"</item>
+        <item> "hosa road"</item>
+        <item> "hosakerehalli"</item>
+        <item> "hoskote"</item>
+        <item> "hosur road"</item>
+        <item> "hulimavu"</item>
+        <item> "isro layout"</item>
+        <item> "itpl"</item>
+        <item> "iblur village"</item>
+        <item> "indira nagar"</item>
+        <item> "jp nagar"</item>
+        <item> "jakkur"</item>
+        <item> "jalahalli"</item>
+        <item> "jalahalli east"</item>
+        <item> "jigani"</item>
+        <item> "judicial layout"</item>
+        <item> "kr puram"</item>
+        <item> "kadubeesanahalli"</item>
+        <item> "kadugodi"</item>
+        <item> "kaggadasapura"</item>
+        <item> "kaggalipura"</item>
+        <item> "kaikondrahalli"</item>
+        <item> "kalena agrahara"</item>
+        <item> "kalyan nagar"</item>
+        <item> "kambipura"</item>
+        <item> "kammanahalli"</item>
+        <item> "kammasandra"</item>
+        <item> "kanakapura"</item>
+        <item> "kanakpura road"</item>
+        <item> "kannamangala"</item>
+        <item> "karuna nagar"</item>
+        <item> "kasavanhalli"</item>
+        <item> "kasturi nagar"</item>
+        <item> "kathriguppe"</item>
+        <item> "kaval byrasandra"</item>
+        <item> "kenchenahalli"</item>
+        <item> "kengeri"</item>
+        <item> "kengeri satellite town"</item>
+        <item> "kereguddadahalli"</item>
+        <item> "kodichikkanahalli"</item>
+        <item> "kodigehaali"</item>
+        <item> "kodigehalli"</item>
     </string-array>
 </resources>

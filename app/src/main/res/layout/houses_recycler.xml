@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="180dp">
+
+    <ImageView
+        android:id="@+id/houseimg"
+        android:layout_width="160dp"
+        android:layout_height="150dp"
+        android:layout_margin="15dp"
+        />
+
+    <TextView
+        android:id="@+id/housePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/houseimg"
+        android:text="Rs. 60,00,000/-"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:padding="4dp"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/rent_sale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:layout_toRightOf="@+id/houseimg"
+        android:text="sale"
+        android:layout_below="@+id/housePrice"/>
+
+    <TextView
+        android:id="@+id/no_bhk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:layout_toRightOf="@+id/houseimg"
+        android:text="1 BHK"
+        android:textColor="@color/black"
+        android:layout_below="@+id/rent_sale"/>
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/houseimg"
+        android:layout_marginRight="10dp"
+        android:padding="4dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/no_bhk"
+        android:text="405 D block, Indira Nagar, Bangalore"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/area"
+        android:text="1000 sq.ft."
+        android:textColor="@color/black"
+        android:layout_toRightOf="@+id/no_bhk"
+        android:layout_below="@id/rent_sale"
+        android:padding="4dp"
+        android:layout_marginLeft="30dp"/>
+
+
+
+
+
+
+</RelativeLayout>
