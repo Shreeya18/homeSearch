@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffcf"
+    tools:context=".About">
+
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="401dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/source_serif_pro_semibold"
+        android:padding="10dp"
+        android:text="Welcome to Home Search Application"
+        android:textColor="@color/black"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/shortn"
+        android:layout_width="359dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/source_serif_pro_semibold"
+        android:padding="10dp"
+        android:layout_below="@+id/heading"
+        android:textColor="@color/black"
+        android:text="Application displays use of feature of : "
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/proj_name"
+        android:layout_width="359dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/source_serif_pro_semibold"
+        android:padding="10dp"
+        android:layout_below="@+id/shortn"
+        android:textColor="@color/black"
+        android:text="Bangalore House Price Prediction"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/details"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/source_serif_pro_semibold"
+        android:padding="10dp"
+        android:layout_below="@+id/proj_name"
+        android:textColor="@color/black"
+        android:layout_marginTop="100dp"
+        android:text="Shreeya Shirish Dhole TYBSC-CS Roll No: CS-4069 Div: 1"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/source_serif_pro_semibold"
+        android:padding="10dp"
+        android:layout_below="@+id/details"
+        android:textColor="@color/black"
+        android:text="D. G. Ruparel College  Batch: B"
+        android:textSize="20dp" />
+
+
+</RelativeLayout>

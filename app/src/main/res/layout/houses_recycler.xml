@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="180dp">
+    android:layout_height="wrap_content"
+    android:background="@drawable/card">
+
 
     <ImageView
         android:id="@+id/houseimg"
-        android:layout_width="160dp"
-        android:layout_height="150dp"
-        android:layout_margin="15dp"
+        android:layout_width="150dp"
+        android:layout_height="140dp"
+        android:layout_margin="10dp"
         />
 
     <TextView
@@ -16,25 +18,37 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/houseimg"
         android:text="Rs. 60,00,000/-"
+        android:fontFamily="@font/roboto_slab"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        android:padding="4dp"
+        android:textSize="17sp"
+        android:padding="3dp"
         android:layout_marginTop="15dp"/>
+
+    <ImageButton
+        android:id="@+id/morebtn"
+        android:layout_width="24dp"
+        android:layout_height="21dp"
+        android:background="@drawable/more"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="90dp"/>
 
     <TextView
         android:id="@+id/rent_sale"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="4dp"
+        android:padding="3dp"
         android:layout_toRightOf="@+id/houseimg"
         android:text="sale"
+        android:fontFamily="@font/roboto_slab"
         android:layout_below="@+id/housePrice"/>
 
     <TextView
         android:id="@+id/no_bhk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="4dp"
+        android:fontFamily="@font/roboto_slab"
+        android:padding="3dp"
         android:layout_toRightOf="@+id/houseimg"
         android:text="1 BHK"
         android:textColor="@color/black"
@@ -44,10 +58,10 @@
         android:id="@+id/address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_slab"
         android:layout_toRightOf="@+id/houseimg"
-        android:layout_marginRight="10dp"
-        android:padding="4dp"
-        android:layout_marginTop="10dp"
+        android:padding="3dp"
+        android:textSize="14sp"
         android:layout_below="@+id/no_bhk"
         android:text="405 D block, Indira Nagar, Bangalore"
         android:textColor="@color/black" />
@@ -57,14 +71,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/area"
         android:text="1000 sq.ft."
+        android:fontFamily="@font/roboto_slab"
         android:textColor="@color/black"
         android:layout_toRightOf="@+id/no_bhk"
         android:layout_below="@id/rent_sale"
-        android:padding="4dp"
-        android:layout_marginLeft="10dp"/>
-
-
-
+        android:padding="3dp"/>
 
 
 

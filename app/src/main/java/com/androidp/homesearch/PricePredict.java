@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,6 +34,7 @@ public class PricePredict extends AppCompatActivity{
     private TextView price,loc;
     private String url = "https://bhaveshree.herokuapp.com/";
     private String newItem;
+    private ProgressBar prog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,9 @@ public class PricePredict extends AppCompatActivity{
         bhk = findViewById(R.id.bhk);
         predbtn = findViewById(R.id.predbtn);
         price = findViewById(R.id.price);
+
+        //Other
+        prog = (ProgressBar)findViewById(R.id.prog);
 
         // Creating Spinner
         Spinner spinner = findViewById(R.id.spin1);
@@ -68,12 +73,13 @@ public class PricePredict extends AppCompatActivity{
         predbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                prog.setVisibility(View.VISIBLE);
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
+                        prog.setVisibility(View.GONE);
                         try {
+
                             JSONObject jsonObject = new JSONObject(response);
                             String data = jsonObject.getString("estimated_price");
                             price.setText((data + " Lakhs Only"));
@@ -85,7 +91,7 @@ public class PricePredict extends AppCompatActivity{
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(PricePredict.this,error.getMessage(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(PricePredict.this,error.getMessage() + "Something Went Wrong!",Toast.LENGTH_SHORT).show();
                     }
                 }){
 

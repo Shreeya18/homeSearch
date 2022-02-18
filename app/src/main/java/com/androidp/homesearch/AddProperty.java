@@ -10,11 +10,15 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.MimeTypeMap;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -30,17 +34,17 @@ public class AddProperty extends AppCompatActivity {
 
     private Button savebtn, uploadBtn;
     private ImageView addImg;
-    private EditText priceAdd, bhkAdd, locAdd, sqftAdd;
+    private EditText priceAdd, locAdd, sqftAdd;
     private Uri imageuri;
     private RadioGroup radiogrp;
     private RadioButton radioButton;
+    private String no;
+    private ProgressBar addPBar;
 
     // Created Firebase database connection
     private FirebaseDatabase storage = FirebaseDatabase.getInstance();
     DatabaseReference myRef = storage.getReference().child("Owners");
     StorageReference db = FirebaseStorage.getInstance().getReference();
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +56,30 @@ public class AddProperty extends AppCompatActivity {
         addImg = findViewById(R.id.addImg);
         uploadBtn = findViewById(R.id.uploadBtn);
         priceAdd = findViewById(R.id.priceAdd);
-        bhkAdd = findViewById(R.id.bhkAdd);
         locAdd = findViewById(R.id.locAdd);
         sqftAdd = findViewById(R.id.sqftAdd);
         radiogrp = findViewById(R.id.grpbtns);
+        addPBar = findViewById(R.id.addPBar);
+
+        Spinner bhk = findViewById(R.id.bhkAdd);
+        Spinner spinner = findViewById(R.id.spin1);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.bhk, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        bhk.setAdapter(adapter);
+
+
+        bhk.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                no = bhk.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
 
         // Clear the radioButton at first.
         radiogrp.clearCheck();
@@ -80,6 +104,7 @@ public class AddProperty extends AppCompatActivity {
                     radioButton = (RadioButton)radiogrp.findViewById(selectedId);
                 }
                 if(imageuri != null){
+                    addPBar.setVisibility(View.VISIBLE);
                     upload(imageuri);
 
                 }else{
@@ -122,13 +147,13 @@ public class AddProperty extends AppCompatActivity {
                 dbr.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
-                        FirebaseModal fmodal = new FirebaseModal(uri.toString(), priceAdd.getText().toString(), bhkAdd.getText().toString(),
+                        addPBar.setVisibility(View.GONE);
+                        FirebaseModal fmodal = new FirebaseModal(uri.toString(), priceAdd.getText().toString(), no,
                                 sqftAdd.getText().toString(), locAdd.getText().toString(), radioButton.getText().toString());
                         String  modelid = myRef.push().getKey();
                         myRef.child(modelid).setValue(fmodal);
                         Toast.makeText(AddProperty.this, "Hurrah!! Successful", Toast.LENGTH_SHORT).show();
                         priceAdd.setText("");
-                        bhkAdd.setText("");
                         sqftAdd.setText("");
                         locAdd.setText("");
                         radiogrp.clearCheck();
@@ -138,6 +163,7 @@ public class AddProperty extends AppCompatActivity {
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
+                addPBar.setVisibility(View.VISIBLE);
 
             }
         }).addOnFailureListener(new OnFailureListener() {

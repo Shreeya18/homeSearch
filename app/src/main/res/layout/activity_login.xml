@@ -43,7 +43,8 @@
         android:text="Login"
         android:textSize="16sp"
         android:textAllCaps="false"
-        android:background="#f8f8"/>
+        android:textColor="@color/black"
+        android:background="@drawable/button_back"/>
 
     <TextView
         android:id="@+id/reg_btn"

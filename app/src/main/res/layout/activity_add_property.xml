@@ -1,86 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddProperty">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
 
 
         <ImageView
             android:id="@+id/addImg"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="185dp"
+            android:layout_height="185dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="25dp"
+            android:background="@drawable/house"
+            android:layout_centerHorizontal="true"
             />
 
         <Button
             android:id="@+id/uploadBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/addImg"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
             android:text="Upload Image"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/addImg"
-            android:layout_marginTop="100dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/addImg"
+            android:fontFamily="@font/roboto_slab"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
             android:textAllCaps="false"
-            android:background="#ffff00"
-            android:padding="5dp"
+            android:background="@drawable/button_back"
+            android:padding="3dp"
             />
 
         <EditText
             android:id="@+id/priceAdd"
             android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_below="@+id/addImg"
+            android:layout_height="45dp"
+            android:layout_below="@+id/uploadBtn"
             android:layout_marginTop="25dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="35dp"
             android:hint="Add Property Price"
+            android:fontFamily="@font/roboto_slab"
+            android:background="@drawable/card"
             android:textColorHint="#454545"
             android:textColor="@color/black"
-            android:padding="5dp"
+            android:padding="10dp"
             />
 
-        <EditText
-            android:id="@+id/bhkAdd"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:layout_below="@+id/priceAdd"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="25dp"
-            android:hint="Add Size"
-            android:textColorHint="#454545"
-            android:textColor="@color/black"
-            android:padding="5dp"
-            />
+
+         <Spinner
+             android:id="@+id/bhkAdd"
+             android:layout_width="140dp"
+             android:layout_height="45dp"
+             android:layout_below="@+id/priceAdd"
+             android:layout_marginTop="25dp"
+             android:background="@drawable/card"
+             android:fontFamily="@font/roboto_slab"
+             android:layout_marginLeft="35dp"
+             android:hint="Add Size"
+             android:textAlignment="center"
+             android:textColorHint="#454545"
+             android:textColor="@color/black"
+             android:padding="5dp"/>
 
         <EditText
             android:id="@+id/sqftAdd"
             android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:layout_toRightOf="@id/bhkAdd"
             android:hint="Add Area"
+            android:background="@drawable/card"
+            android:fontFamily="@font/roboto_slab"
             android:layout_below="@+id/priceAdd"
             android:layout_marginTop="25dp"
             android:textColorHint="#454545"
             android:textColor="@color/black"
-            android:padding="5dp"
-            android:layout_marginLeft="25dp"
+            android:padding="10dp"
+            android:layout_marginLeft="30dp"
             />
         <EditText
             android:id="@+id/locAdd"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/sqftAdd"
             android:layout_marginTop="25dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="35dp"
             android:hint="Add Location"
+            android:fontFamily="@font/roboto_slab"
+            android:background="@drawable/card"
             android:textColorHint="#454545"
             android:textColor="@color/black"
-            android:padding="5dp"
+            android:padding="10dp"
             />
         <RadioGroup
             android:id="@+id/grpbtns"
@@ -90,19 +105,21 @@
             android:layout_below="@+id/locAdd"
             android:layout_marginTop="25dp"
             android:orientation="horizontal"
-            android:layout_marginLeft="25dp">
+            android:layout_marginLeft="35dp">
 
             <RadioButton
                 android:id="@+id/saleAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
+                android:fontFamily="@font/roboto_slab"
                 android:padding="10dp"
                 android:text="Sale"
                 />
 
             <RadioButton
                 android:id="@+id/rentAdd"
+                android:fontFamily="@font/roboto_slab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
@@ -115,14 +132,24 @@
         <Button
             android:id="@+id/savebtn"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/grpbtns"
             android:text="Save"
             android:layout_marginTop="25dp"
             android:textAllCaps="false"
-            android:background="@color/purple_500"
-            android:textColor="@color/white"/>
+            android:background="@drawable/button_back"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_slab"/>
 
 
-</RelativeLayout>
+            <ProgressBar
+                android:id="@+id/addPBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible"/>
+
+        </RelativeLayout>
+</ScrollView>

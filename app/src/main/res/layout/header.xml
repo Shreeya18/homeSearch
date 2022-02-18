@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:background="#080088"
+    android:layout_height="300dp"
+    android:background="#2a26ff"
     android:orientation="vertical"
     android:gravity="center">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="HoMe SeArCh"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:fontFamily="serif-monospace"/>
+    <ImageView
+        android:layout_width="215dp"
+        android:layout_height="200dp"
+        android:background="@drawable/nav_view"/>
 
 </LinearLayout>

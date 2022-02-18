@@ -4,13 +4,22 @@
     <group android:checkableBehavior="single">
 
         <item android:id="@+id/login"
-            android:title="Login"/>
+            android:icon="@drawable/login"
+            android:title="Login" />
 
         <item android:id="@+id/price_pred"
-            android:title="Home Price Prediction"/>
+            android:icon="@drawable/home"
+            android:title="Predict Home Price"/>
+
+        <item android:id="@+id/addnewP"
+            android:icon="@drawable/add"
+            android:title="Add New Property"
+            />
 
         <item android:id="@+id/about"
+            android:icon="@drawable/about"
             android:title="About"/>
+
 
     </group>
 

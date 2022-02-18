@@ -4,18 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFF00"
+    android:background="#6d1fff"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/houseLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/houseLogo"
+        android:layout_centerHorizontal="true"
         android:text="HomeSearch"
-        android:textAlignment="center"
-        android:textSize="40dp"
-        android:textColor="@color/black"
-        android:layout_centerInParent="true"
+        android:fontFamily="@font/inknut_antiqua"
+        android:textColor="@color/white"
+        android:textSize="30dp"
         android:textStyle="bold"
+
         />
 
 </RelativeLayout>

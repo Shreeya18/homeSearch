@@ -18,13 +18,32 @@
     >
 
     <androidx.appcompat.widget.Toolbar
+        android:background="@drawable/eclipse"
         android:id="@+id/tool_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIcon="@drawable/menu_bar"
         tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HomeSearch"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:fontFamily="@font/roboto_slab"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="70dp"/>
+
+    <ImageButton
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:background="@drawable/loggedin"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="5dp"
+        android:padding="15dp"
+        />
 
 
     <EditText
@@ -33,11 +52,12 @@
         android:layout_height="45dp"
         android:layout_marginTop="80dp"
         android:layout_centerHorizontal="true"
-        android:background="@color/purple_500"
+        android:background="@color/white"
         android:hint="Search"
-        android:textColorHint="@color/white"
+        android:fontFamily="@font/source_serif_pro"
+        android:textColorHint="@color/black"
         android:padding="12dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -46,21 +66,19 @@
         android:layout_height="match_parent"
         android:layout_below="@id/search_btn"
         android:layout_marginTop="30dp"
-        android:padding="10dp"
+        android:padding="5dp"
         tools:listitem="@layout/houses_recycler"
-        android:layout_marginBottom="80dp"
         />
 
-    <Button
-        android:id="@+id/prop_add"
+
+    <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add"
-        android:textAllCaps="false"
-        android:background="#95af"
-        android:layout_below="@+id/recyview"
-        android:layout_marginTop="-66dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        android:id="@+id/pro_bar"/>
 
 
 </RelativeLayout>
@@ -73,7 +91,5 @@
         app:menu="@menu/nav_menu"
         android:id="@+id/nav_view"
         />
-
-
 
 </androidx.drawerlayout.widget.DrawerLayout>

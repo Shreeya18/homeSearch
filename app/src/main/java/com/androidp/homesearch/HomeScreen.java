@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
@@ -37,7 +38,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
     NavigationView nav_view;
     Toolbar tool_bar;
     ActionBarDrawerToggle toggle;
-    private Button propAdd;
+    ProgressBar pro_bar;
 
 
     // Recycler View ************************************ Show Data ****************************'
@@ -58,7 +59,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         drawerLayout = findViewById(R.id.draw_lay);
         nav_view = findViewById(R.id.nav_view);
         tool_bar = findViewById(R.id.tool_bar);
-        propAdd = findViewById(R.id.prop_add);
+        pro_bar = findViewById(R.id.pro_bar);
 
         // **********************************************
         recyview = findViewById(R.id.recyview);
@@ -68,36 +69,30 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         houseAdapter = new HouseAdapter(this, list);
         recyview.setAdapter(houseAdapter);
 
-
+        tool_bar.setTitle("");
+        pro_bar.setVisibility(View.VISIBLE);
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
                     FirebaseModal firebaseModal = dataSnapshot.getValue(FirebaseModal.class);
                     list.add(firebaseModal);
+                    pro_bar.setVisibility(View.GONE);
                 }
                 houseAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                pro_bar.setVisibility(View.GONE);
                 Log.d("DatabaseError", "The Error is: " + error);
-                Toast.makeText(HomeScreen.this, "Uncessful Fetch", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeScreen.this, "Kindly check Your Conectivity", Toast.LENGTH_SHORT).show();
             }
         });
 
 
         // **********************************************
 
-
-        propAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(HomeScreen.this, AddProperty.class);
-                startActivity(intent);
-            }
-        });
 
         nav_view.setNavigationItemSelectedListener(this);
         setSupportActionBar(tool_bar);
@@ -128,6 +123,14 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         }
         if(id == R.id.login){
             Intent intent = new Intent(HomeScreen.this,LoginActivity.class);
+            startActivity(intent);
+        }
+        if(id == R.id.addnewP){
+            Intent intent = new Intent(HomeScreen.this, AddProperty.class);
+            startActivity(intent);
+        }
+        if(id == R.id.about){
+            Intent intent = new Intent(HomeScreen.this, About.class);
             startActivity(intent);
         }
         return false;
