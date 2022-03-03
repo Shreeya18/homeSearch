@@ -11,9 +11,14 @@
     android:focusableInTouchMode="true"
     tools:context=".HomeScreen">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frameContainer"/>
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/reel"
     android:background="@color/white"
     >
 
@@ -36,14 +41,6 @@
         android:layout_marginTop="14dp"
         android:layout_marginLeft="70dp"/>
 
-    <ImageButton
-        android:layout_width="58dp"
-        android:layout_height="58dp"
-        android:background="@drawable/loggedin"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="5dp"
-        android:padding="15dp"
-        />
 
 
     <EditText

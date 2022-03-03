@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchFilter">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+
+    <EditText
+        android:layout_width="280dp"
+        android:background="@drawable/card"
+        android:layout_height="50dp"
+        android:id="@+id/locsearch"
+        android:layout_marginTop="50dp"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter Location"
+        android:fontFamily="@font/roboto_slab"/>
+
+
+
+    <TextView
+        android:id="@+id/priceSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Price Range"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:fontFamily="@font/roboto_slab"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/locsearch"
+        android:layout_centerHorizontal="true"/>
+
+    <SeekBar
+        android:id="@+id/priceSeekBar"
+        android:layout_below="@id/priceSearch"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="#dfa"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/priceSeekBar"
+        android:layout_centerHorizontal="true"
+        android:text="Text"/>
+
+    <Spinner
+        android:id="@+id/spiner"
+        android:layout_width="100dp"
+        android:textAlignment="center"
+        android:textDirection="ltr"
+        android:layout_height="40dp"
+        android:layout_below="@id/priceSeekBar"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        />
+
+
+    <Button
+        android:id="@+id/fragmentBackbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spiner"
+        android:text="Done"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="false"/>
+
+
+
+</RelativeLayout>

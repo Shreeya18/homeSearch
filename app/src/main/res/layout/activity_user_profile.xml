@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserProfile">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+        <ImageView
+            android:id="@+id/profilepic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="18dp"
+            android:background="@drawable/login"
+            />
+
+
+        <TextView
+            android:id="@+id/profileUname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/profilepic"
+            android:layout_marginLeft="19dp"
+            android:text="User Name"
+            android:layout_marginTop="35dp"
+            android:textSize="30dp"
+            android:fontFamily="@font/inknut_antiqua"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/profdetailsect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile Details"
+            android:layout_below="@+id/profilepic"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/roboto_slab"
+            />
+        <TextView
+            android:id="@+id/profEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="30dp"
+            android:text="Email Id"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_slab"
+            android:layout_below="@id/profdetailsect"/>
+
+        <TextView
+            android:id="@+id/profContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="20dp"
+            android:text="Contact No."
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_slab"
+            android:layout_below="@id/profEmail"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Property Added"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_slab"
+            android:layout_below="@id/profContact"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recy"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:padding="5dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/profContact"
+            android:layout_marginTop="80dp"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recy"
+            android:padding="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="Edit Profile"
+            android:textAllCaps="false"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_back"
+            android:fontFamily="@font/roboto_slab"/>
+
+
+
+    </RelativeLayout>
+
+
+</ScrollView>

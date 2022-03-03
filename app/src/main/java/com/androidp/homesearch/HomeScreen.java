@@ -2,6 +2,7 @@ package com.androidp.homesearch;
 
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -10,18 +11,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Trace;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,6 +47,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
     Toolbar tool_bar;
     ActionBarDrawerToggle toggle;
     ProgressBar pro_bar;
+    EditText searchbtn;
 
 
     // Recycler View ************************************ Show Data ****************************'
@@ -48,6 +57,9 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
     private FirebaseDatabase storage = FirebaseDatabase.getInstance();
     DatabaseReference myRef = storage.getReference().child("Owners");
     StorageReference db = FirebaseStorage.getInstance().getReference();
+
+    // _________________________________________________________________________________________
+    FirebaseAuth auth;
     // ******************  Show Data ************************************************************
 
 
@@ -56,10 +68,26 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
 
+        auth = FirebaseAuth.getInstance();
+
         drawerLayout = findViewById(R.id.draw_lay);
         nav_view = findViewById(R.id.nav_view);
         tool_bar = findViewById(R.id.tool_bar);
         pro_bar = findViewById(R.id.pro_bar);
+        // **********************************************
+        //Fragment
+        searchbtn = findViewById(R.id.search_btn);
+        searchbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction().add(R.id.frameContainer, new SearchFilter()).commit();
+                RelativeLayout reel = findViewById(R.id.reel);
+                reel.setVisibility(View.GONE);
+            }
+        });
+
+
+        //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
         // **********************************************
         recyview = findViewById(R.id.recyview);
@@ -102,17 +130,37 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         toggle.syncState();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
 
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.profile_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(toggle.onOptionsItemSelected(item)){
-            return true;
+        int id = item.getItemId();
+        if(id == R.id.logout) {
+            auth.signOut();
+            Toast.makeText(HomeScreen.this, "Logged Out!", Toast.LENGTH_SHORT).show();
+        }
+        if(id == R.id.chkProfile) {
+            Intent intent = new Intent(HomeScreen.this, UserProfile.class);
+            startActivity(intent);
+            Toast.makeText(HomeScreen.this, "Check Profile", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
+        //if(toggle.onOptionsItemSelected(item)){
+            //return true;
+        //}
     }
+
+
+    FirebaseUser user = auth.getInstance().getCurrentUser();
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -125,10 +173,13 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
             Intent intent = new Intent(HomeScreen.this,LoginActivity.class);
             startActivity(intent);
         }
-        if(id == R.id.addnewP){
-            Intent intent = new Intent(HomeScreen.this, AddProperty.class);
-            startActivity(intent);
-        }
+        if(id == R.id.addnewP)
+            if(user != null) {
+                Intent intent = new Intent(HomeScreen.this, AddProperty.class);
+                startActivity(intent);
+            } else{
+                Toast.makeText(HomeScreen.this, "Log In to add Property!", Toast.LENGTH_SHORT).show();
+            }
         if(id == R.id.about){
             Intent intent = new Intent(HomeScreen.this, About.class);
             startActivity(intent);
@@ -136,5 +187,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         return false;
     }
 
+
+// Side options Menu
 
 }

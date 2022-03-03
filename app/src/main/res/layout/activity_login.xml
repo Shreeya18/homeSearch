@@ -16,6 +16,7 @@
         android:layout_marginTop="190dp"
         android:layout_centerHorizontal="true"
         android:hint="Enter Usename"
+        android:fontFamily="@font/roboto_slab"
         android:textColorHint="@color/black"
         android:background="#f9f979"
         />
@@ -27,21 +28,60 @@
         android:padding="15dp"
         android:textSize="18sp"
         android:layout_marginTop="280dp"
+        android:fontFamily="@font/roboto_slab"
         android:layout_centerHorizontal="true"
         android:hint="Enter Password"
         android:textColorHint="@color/black"
         android:background="#f9f979"
         />
 
+    <TextView
+        android:id="@+id/forgotpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password?"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto_slab"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/log_passwd"
+        android:padding="5dp"/>
+
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/chkbox"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="100dp"
+        android:layout_below="@+id/forgotpass"
+        />
+
+    <TextView
+        android:id="@+id/rememe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember Me"
+        android:layout_toRightOf="@+id/chkbox"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto_slab"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/forgotpass"
+        android:padding="5dp"/>
+
     <Button
         android:id="@+id/log_btn"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:padding="15dp"
-        android:layout_marginTop="380dp"
+        android:padding="5dp"
+        android:layout_below="@+id/rememe"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:text="Login"
-        android:textSize="16sp"
+        android:fontFamily="@font/roboto_slab"
+        android:textSize="18sp"
         android:textAllCaps="false"
         android:textColor="@color/black"
         android:background="@drawable/button_back"/>
@@ -52,8 +92,14 @@
         android:layout_height="wrap_content"
         android:text="New User? Register"
         android:textColor="@color/black"
-        android:layout_marginTop="450dp"
+        android:fontFamily="@font/roboto_slab"
+        android:textSize="18sp"
+        android:padding="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/log_btn"
         android:layout_centerHorizontal="true"/>
+
+
 
 
 

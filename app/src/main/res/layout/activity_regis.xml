@@ -61,7 +61,7 @@
         android:id="@+id/signinBtn"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:text="Sign In"
+        android:text="Register"
         android:background="#089300"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="400dp"
