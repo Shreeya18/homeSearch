@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button log_btn;
     private TextView reg_btn, rememe, forgotpass;
     private FirebaseAuth auth;
-    private SharedPreferences sp;
+    private ProgressBar login_probar;
     private CheckBox chkbox;
 
     @Override
@@ -46,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         rememe = findViewById(R.id.rememe);
         chkbox = findViewById(R.id.chkbox);
         forgotpass = findViewById(R.id.forgotpass);
+        login_probar = findViewById(R.id.login_probar);
 
         log_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,12 +55,13 @@ public class LoginActivity extends AppCompatActivity {
                 if(chkbox.isChecked()){
                     SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE);
                     SharedPreferences.Editor myEdit = sharedPreferences.edit();
-
+                    chkbox.setChecked(true);
                     // write all the data entered by the user in SharedPreference and apply
                     myEdit.putString("name", log_u_name.getText().toString());
                     myEdit.putString("pass", log_passwd.getText().toString());
                     myEdit.apply();
                 }
+                login_probar.setVisibility(View.VISIBLE);
                 userLogin();
             }
         });
@@ -129,6 +132,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    login_probar.setVisibility(View.GONE);
                     Intent intent = new Intent(LoginActivity.this, HomeScreen.class);
                     intent.putExtra("email", auth.getCurrentUser().getEmail());
                     intent.putExtra("uid", auth.getCurrentUser().getUid());

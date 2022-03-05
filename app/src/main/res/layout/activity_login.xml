@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF4CB"
     tools:context=".LoginActivity">
 
 
@@ -18,7 +19,8 @@
         android:hint="Enter Usename"
         android:fontFamily="@font/roboto_slab"
         android:textColorHint="@color/black"
-        android:background="#f9f979"
+        android:background="@drawable/button_back2"
+        android:elevation="3dp"
         />
 
     <EditText
@@ -31,31 +33,21 @@
         android:fontFamily="@font/roboto_slab"
         android:layout_centerHorizontal="true"
         android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:elevation="2dp"
         android:textColorHint="@color/black"
-        android:background="#f9f979"
+        android:background="@drawable/button_back2"
         />
 
-    <TextView
-        android:id="@+id/forgotpass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Forgot Password?"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/roboto_slab"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/log_passwd"
-        android:padding="5dp"/>
 
 
     <com.google.android.material.checkbox.MaterialCheckBox
         android:id="@+id/chkbox"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="5dp"
+        android:layout_width="27dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="100dp"
-        android:layout_below="@+id/forgotpass"
+        android:layout_below="@+id/log_passwd"
         />
 
     <TextView
@@ -64,11 +56,12 @@
         android:layout_height="wrap_content"
         android:text="Remember Me"
         android:layout_toRightOf="@+id/chkbox"
-        android:textSize="18sp"
+        android:textSize="17sp"
         android:textColor="@color/black"
         android:fontFamily="@font/roboto_slab"
+        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/forgotpass"
+        android:layout_below="@+id/log_passwd"
         android:padding="5dp"/>
 
     <Button
@@ -83,8 +76,22 @@
         android:fontFamily="@font/roboto_slab"
         android:textSize="18sp"
         android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:elevation="10dp"
+        android:background="@drawable/button_back3"/>
+
+    <TextView
+        android:id="@+id/forgotpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password?"
+        android:textSize="17sp"
         android:textColor="@color/black"
-        android:background="@drawable/button_back"/>
+        android:fontFamily="@font/roboto_slab"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/log_btn"
+        android:padding="5dp"/>
 
     <TextView
         android:id="@+id/reg_btn"
@@ -93,11 +100,20 @@
         android:text="New User? Register"
         android:textColor="@color/black"
         android:fontFamily="@font/roboto_slab"
-        android:textSize="18sp"
+        android:textSize="17sp"
         android:padding="5dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/log_btn"
-        android:layout_centerHorizontal="true"/>
+        android:layout_below="@+id/forgotpass" />
+
+    <ProgressBar
+        android:id="@+id/login_probar"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignBottom="@+id/rememe"/>
+
 
 
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF4CB"
     tools:context=".AddProperty">
 
         <RelativeLayout
@@ -31,11 +32,13 @@
             android:layout_below="@+id/addImg"
             android:fontFamily="@font/roboto_slab"
             android:textStyle="bold"
+            android:textColor="@color/white"
             android:layout_centerHorizontal="true"
             android:textAllCaps="false"
-            android:background="@drawable/button_back"
+            android:background="@drawable/button_back3"
             android:padding="3dp"
             />
+
 
         <EditText
             android:id="@+id/priceAdd"
@@ -46,7 +49,7 @@
             android:layout_marginLeft="35dp"
             android:hint="Add Property Price"
             android:fontFamily="@font/roboto_slab"
-            android:background="@drawable/card"
+            android:background="@drawable/button_back2"
             android:textColorHint="#454545"
             android:textColor="@color/black"
             android:padding="10dp"
@@ -73,7 +76,7 @@
             android:layout_height="45dp"
             android:layout_toRightOf="@id/bhkAdd"
             android:hint="Add Area"
-            android:background="@drawable/card"
+            android:background="@drawable/button_back2"
             android:fontFamily="@font/roboto_slab"
             android:layout_below="@+id/priceAdd"
             android:layout_marginTop="25dp"
@@ -91,7 +94,7 @@
             android:layout_marginLeft="35dp"
             android:hint="Add Location"
             android:fontFamily="@font/roboto_slab"
-            android:background="@drawable/card"
+            android:background="@drawable/button_back2"
             android:textColorHint="#454545"
             android:textColor="@color/black"
             android:padding="10dp"
@@ -131,14 +134,16 @@
         <Button
             android:id="@+id/savebtn"
             android:layout_width="300dp"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/grpbtns"
             android:text="Save"
+            android:textStyle="bold"
             android:layout_marginTop="25dp"
             android:textAllCaps="false"
-            android:background="@drawable/button_back"
-            android:textColor="@color/black"
+            android:background="@drawable/button_back3"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/roboto_slab"/>
 
 

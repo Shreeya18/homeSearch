@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,6 +19,7 @@ public class ForgotPassword extends AppCompatActivity {
 
     private EditText resetemail;
     private Button resetbtn;
+    private ProgressBar resetpbar;
     FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +29,12 @@ public class ForgotPassword extends AppCompatActivity {
         resetemail = findViewById(R.id.reset_email);
         resetbtn = findViewById(R.id.resetbtn);
         auth = FirebaseAuth.getInstance();
+        resetpbar = findViewById(R.id.resetpass_probar);
 
         resetbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                resetpbar.setVisibility(View.VISIBLE);
                 resetPassword();
             }
         });
@@ -48,6 +52,7 @@ public class ForgotPassword extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
+                    resetpbar.setVisibility(View.GONE);
                     Toast.makeText(ForgotPassword.this, "Check Your Email to Reset Passsword", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(ForgotPassword.this, LoginActivity.class);
                     startActivity(intent);

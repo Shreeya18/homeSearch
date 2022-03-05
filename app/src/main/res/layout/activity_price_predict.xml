@@ -41,7 +41,7 @@
         android:layout_below="@id/spin1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:background="@drawable/edit_text_back"
+        android:background="@drawable/button_back2"
         android:fontFamily="@font/roboto_slab"
         android:hint="Enter Sqft"
         android:padding="10dp"
@@ -55,7 +55,7 @@
         android:layout_below="@id/sqft"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:background="@drawable/edit_text_back"
+        android:background="@drawable/button_back2"
         android:fontFamily="@font/roboto_slab"
         android:hint="Enter Number of Bathrooms"
         android:padding="10dp"
@@ -74,7 +74,7 @@
         android:textColor="@color/black"
         android:fontFamily="@font/roboto_slab"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/edit_text_back"
+        android:background="@drawable/button_back2"
         />
 
     <Button

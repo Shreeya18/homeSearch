@@ -45,22 +45,19 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
     DrawerLayout drawerLayout;
     NavigationView nav_view;
     Toolbar tool_bar;
-    ActionBarDrawerToggle toggle;
     ProgressBar pro_bar;
     EditText searchbtn;
 
 
-    // Recycler View ************************************ Show Data ****************************'
+    // Recycler View Initialization
     private RecyclerView recyview;
     HouseAdapter houseAdapter;
     ArrayList<FirebaseModal> list;
     private FirebaseDatabase storage = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = storage.getReference().child("Owners");
-    StorageReference db = FirebaseStorage.getInstance().getReference();
+    DatabaseReference myRef = storage.getReference().child("Owners");;
 
     // _________________________________________________________________________________________
     FirebaseAuth auth;
-    // ******************  Show Data ************************************************************
 
 
     @Override
@@ -74,7 +71,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         nav_view = findViewById(R.id.nav_view);
         tool_bar = findViewById(R.id.tool_bar);
         pro_bar = findViewById(R.id.pro_bar);
-        // **********************************************
+
         //Fragment
         searchbtn = findViewById(R.id.search_btn);
         searchbtn.setOnClickListener(new View.OnClickListener() {
@@ -86,10 +83,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
             }
         });
 
-
-        //&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-
-        // **********************************************
+        // Show House Property Added data in Recycler View
         recyview = findViewById(R.id.recyview);
         recyview.setLayoutManager(new LinearLayoutManager(this));
 
@@ -119,9 +113,7 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         });
 
 
-        // **********************************************
-
-
+        //Creating Navigation View
         nav_view.setNavigationItemSelectedListener(this);
         setSupportActionBar(tool_bar);
 
@@ -154,9 +146,6 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
             Toast.makeText(HomeScreen.this, "Check Profile", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
-        //if(toggle.onOptionsItemSelected(item)){
-            //return true;
-        //}
     }
 
 
@@ -186,8 +175,5 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         }
         return false;
     }
-
-
-// Side options Menu
 
 }

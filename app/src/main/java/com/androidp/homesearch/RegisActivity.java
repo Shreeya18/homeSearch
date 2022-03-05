@@ -8,6 +8,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,6 +22,7 @@ public class RegisActivity extends AppCompatActivity {
     private EditText reg_name, reg_email, reg_contact, reg_passwd;
     private Button register;
     FirebaseAuth auth;
+    private ProgressBar regis_pbar;
 
 
     @Override
@@ -34,6 +36,7 @@ public class RegisActivity extends AppCompatActivity {
         reg_contact = findViewById(R.id.reg_contact);
         reg_passwd = findViewById(R.id.reg_passwd);
         register = findViewById(R.id.signinBtn);
+        regis_pbar = findViewById(R.id.regis_probar);
 
 
         auth = FirebaseAuth.getInstance();
@@ -42,6 +45,7 @@ public class RegisActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                regis_pbar.setVisibility(View.VISIBLE);
                 registerUser();
             }
         });
@@ -92,6 +96,7 @@ public class RegisActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    regis_pbar.setVisibility(View.GONE);
                     User user = new User(name, email, passwd, contact);
                     FirebaseDatabase.getInstance().getReference("Users")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

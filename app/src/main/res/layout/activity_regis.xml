@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF4CB"
     tools:context=".RegisActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/reg_name"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:padding="10dp"
+        android:fontFamily="@font/roboto_slab"
         android:textSize="18sp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="100dp"
         android:layout_centerHorizontal="true"
         android:hint="Enter Name"
         android:textColorHint="@color/black"
-        android:background="#f9f979"
+        android:background="@drawable/button_back2"
         />
 
     <EditText
@@ -24,12 +29,14 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:padding="10dp"
+        android:fontFamily="@font/roboto_slab"
         android:textSize="18sp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/reg_name"
         android:layout_centerHorizontal="true"
         android:hint="Enter Email Id"
         android:textColorHint="@color/black"
-        android:background="#f9f979"
+        android:background="@drawable/button_back2"
         />
 
     <EditText
@@ -37,38 +44,55 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:padding="10dp"
+        android:fontFamily="@font/roboto_slab"
         android:textSize="18sp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/reg_email"
         android:layout_centerHorizontal="true"
         android:hint="Enter Contact No."
+        android:inputType="number"
         android:textColorHint="@color/black"
-        android:background="#f9f979"
+        android:background="@drawable/button_back2"
         />
     <EditText
         android:id="@+id/reg_passwd"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:padding="10dp"
+        android:fontFamily="@font/roboto_slab"
         android:textSize="18sp"
-        android:layout_marginTop="320dp"
+        android:layout_below="@+id/reg_contact"
+        android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
         android:hint="Enter Password"
+        android:inputType="textPassword"
         android:textColorHint="@color/black"
-        android:background="#f9f979"
+        android:background="@drawable/button_back2"
         />
 
     <Button
         android:id="@+id/signinBtn"
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:text="Register"
-        android:background="#089300"
+        android:fontFamily="@font/roboto_slab"
+        android:background= "@drawable/button_back3"
+        android:textSize="20sp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/reg_passwd"
         android:textColor="@color/white"
         android:textAllCaps="false"/>
 
+    <ProgressBar
+        android:id="@+id/regis_probar"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"/>
 
 
 
 </RelativeLayout>
+</ScrollView>
